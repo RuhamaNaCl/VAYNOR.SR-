@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Addresses | VAYNOR</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' font-style='italic' fill='%23e9bd75' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/responsive.css?v=6">
+</head>
+<body data-page="addresses" data-protected>
+<a class="skip-link" href="#main">Skip to content</a>
+<header data-chrome="header"></header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Where we ship</p>
+    <h1>Addresses</h1>
+    <p class="lead">Checkout prefills from your most recent saved address.</p>
+  </div>
+  <div class="wrap" style="padding-bottom:clamp(60px,9vw,120px)">
+    <div class="cart-layout">
+      <div class="grid-2" id="addr-list" style="grid-template-columns:1fr 1fr;align-content:start"></div>
+      <form class="summary" id="addr-form">
+        <h3 style="font-family:var(--font-display)">Add an address</h3>
+        <div class="field"><label>Label</label><input name="addr-label" placeholder="Home / Office"></div>
+        <div class="field"><label>Receiver name</label><input name="addr-name" required></div>
+        <div class="field"><label>Phone</label><input name="addr-phone" placeholder="01XXXXXXXXX"></div>
+        <div class="field"><label>Address</label><textarea name="addr-address" rows="2" required></textarea></div>
+        <div class="field-row">
+          <div class="field"><label>Area</label><input name="addr-area" placeholder="Dhanmondi"></div>
+          <div class="field"><label>City</label>
+            <select name="addr-city"><option>Dhaka</option><option>Chattogram</option><option>Sylhet</option><option>Rajshahi</option><option>Khulna</option></select>
+          </div>
+        </div>
+        <button class="btn block" type="submit">Save address</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer data-chrome="footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js?v=6"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/db.js?v=6"></script>
+<script src="js/ui.js?v=6"></script>
+<script src="js/redirects.js?v=6"></script>
+<script src="js/cart.js?v=6"></script>
+<script src="js/orders.js?v=6"></script>
+</body>
+</html>

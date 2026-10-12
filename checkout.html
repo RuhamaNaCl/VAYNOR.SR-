@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | VAYNOR</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' font-style='italic' fill='%23e9bd75' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/responsive.css?v=6">
+</head>
+<body data-page="checkout">
+<a class="skip-link" href="#main">Skip to content</a>
+<header data-chrome="header"></header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Final step</p>
+    <h1>Checkout</h1>
+    <div class="steps"><span><a href="cart.html">Bag</a></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span class="on">Details</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg><span>Confirm</span></div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:clamp(60px,9vw,120px)">
+    <div id="checkout-live">
+      <form id="checkout-form" class="checkout-grid" novalidate>
+        <div>
+          <div class="form-card">
+            <h3><span class="n">1</span> Contact</h3>
+            <div class="field-row">
+              <div class="field"><label>Full name</label><input id="co-name" name="name" placeholder="e.g. Ruhama Nawrin" autocomplete="name"><span class="err">Tell us your name</span></div>
+              <div class="field"><label>Phone</label><input id="co-phone" name="phone" placeholder="01XXXXXXXXX" autocomplete="tel" inputmode="tel"><span class="err">Enter a valid BD mobile number</span></div>
+            </div>
+            <div class="field"><label>Email</label><input id="co-email" name="email" type="email" placeholder="you@example.com" autocomplete="email"><span class="err">Enter a valid email</span></div>
+          </div>
+
+          <div class="form-card">
+            <h3><span class="n">2</span> Delivery address</h3>
+            <div class="field"><label>Address</label><input id="co-address" name="address" placeholder="House, road, area" autocomplete="street-address"><span class="err">We need a full address</span></div>
+            <div class="field-row">
+              <div class="field"><label>City</label>
+                <select id="co-city" name="city">
+                  <option>Dhaka</option><option>Chattogram</option><option>Sylhet</option><option>Rajshahi</option><option>Khulna</option><option>Barishal</option><option>Rangpur</option><option>Mymensingh</option>
+                </select>
+              </div>
+              <div class="field"><label>Area / Thana</label><input id="co-area" name="area" placeholder="e.g. Dhanmondi"></div>
+            </div>
+            <div class="field"><label>Delivery notes (optional)</label><textarea id="co-notes" name="notes" rows="2" placeholder="Landmark, preferred time…"></textarea></div>
+          </div>
+
+          <div class="form-card">
+            <h3><span class="n">3</span> Payment</h3>
+            <div class="radio-cards">
+              <label class="radio-card sel"><input type="radio" name="payment" value="Cash on delivery" checked> <span><b>Cash on delivery</b><small>Pay the courier when it arrives, anywhere in Bangladesh</small></span></label>
+              <label class="radio-card"><input type="radio" name="payment" value="bKash"> <span><b>bKash</b><small>Send to 01700-000000 (Personal) after the call</small></span></label>
+              <label class="radio-card"><input type="radio" name="payment" value="Nagad"> <span><b>Nagad</b><small>Send to 01700-000000 after the call</small></span></label>
+            </div>
+          </div>
+        </div>
+
+        <aside class="summary">
+          <h3 style="font-family:var(--font-display)">Your order</h3>
+          <div id="checkout-items"></div>
+          <div class="promo-row">
+            <input id="promo-code" placeholder="Promo code" aria-label="Promo code">
+            <button class="mini-btn" id="promo-apply" type="button">Apply</button>
+          </div>
+          <p class="small" id="promo-note" style="min-height:18px;margin:-6px 0 8px"></p>
+          <div class="sum-line"><span>Subtotal</span><b id="sum-sub">—</b></div>
+          <div class="sum-line"><span>Discount</span><b id="sum-disc">—</b></div>
+          <div class="sum-line"><span>Shipping</span><b id="sum-ship">—</b></div>
+          <div class="sum-line total"><span>Total</span><b id="sum-total">—</b></div>
+          <button class="btn block" id="place-order" type="submit" style="margin-top:16px"><span id="place-order-label">Place order</span></button>
+          <p class="card-note" style="text-align:center;margin-top:10px">No card needed. Order first, pay on delivery.</p>
+        </aside>
+      </form>
+    </div>
+
+    <div id="checkout-success" style="display:none">
+      <div class="success-panel">
+        <div class="tick"><svg viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></svg></div>
+        <p class="eyebrow">Order confirmed</p>
+        <h2>It's on its way<br><em style="font-style:italic;color:var(--brass-2)">to your wrist.</em></h2>
+        <p class="lead">We've received your order. Our team will call to confirm within a few hours.</p>
+        <div class="order-id-chip">Order <span id="success-order-id">—</span></div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn" id="success-track" href="orders.html">Track this order</a>
+          <a class="btn ghost" href="shop.html">Keep browsing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer data-chrome="footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js?v=6"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/db.js?v=6"></script>
+<script src="js/ui.js?v=6"></script>
+<script src="js/redirects.js?v=6"></script>
+<script src="js/cart.js?v=6"></script>
+<script src="js/checkout.js?v=6"></script>
+</body>
+</html>

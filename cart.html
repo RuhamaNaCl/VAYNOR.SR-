@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your bag | VAYNOR</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' font-style='italic' fill='%23e9bd75' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/responsive.css?v=6">
+</head>
+<body data-page="cart">
+<a class="skip-link" href="#main">Skip to content</a>
+<header data-chrome="header"></header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Almost yours</p>
+    <h1>Your bag</h1>
+  </div>
+  <div class="wrap" style="padding-bottom:clamp(60px,9vw,120px)">
+    <div class="cart-layout">
+      <div>
+        <div id="cart-root"></div>
+        <p class="muted small" style="margin-top:18px">Prices include VAT. Shipping is calculated at checkout, free over <span data-bind="freeShippingFrom"></span>.</p>
+      </div>
+      <aside class="summary" id="cart-summary">
+        <h3 style="font-family:var(--font-display)">Summary</h3>
+        <div class="sum-line"><span>Subtotal</span><b id="cs-sub">—</b></div>
+        <div class="sum-line"><span>Shipping</span><b id="cs-ship">—</b></div>
+        <div class="sum-line total"><span>Total</span><b id="cs-total">—</b></div>
+        <a class="btn block" href="checkout.html" style="margin-top:16px">Checkout</a>
+        <a class="btn ghost block sm" href="shop.html" style="margin-top:8px">Continue shopping</a>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer data-chrome="footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js?v=6"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/db.js?v=6"></script>
+<script src="js/ui.js?v=6"></script>
+<script src="js/redirects.js?v=6"></script>
+<script src="js/cart.js?v=6"></script>
+<script src="js/wishlist.js?v=6"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const paint = () => {
+    const items = VAYNOR.cart.get();
+    if (!items.length) { const el = VAYNOR.$("#cart-summary"); if (el) el.style.display = "none"; return; }
+    const el = VAYNOR.$("#cart-summary"); if (el) el.style.display = "";
+    const t = VAYNOR.cart.totals();
+    VAYNOR.$("#cs-sub").textContent = VAYNOR.money(t.subtotal);
+    VAYNOR.$("#cs-ship").textContent = t.shipping ? VAYNOR.money(t.shipping) : "Free";
+    VAYNOR.$("#cs-total").textContent = VAYNOR.money(t.total);
+  };
+  document.addEventListener("vaynor:cart", paint);
+  paint();
+});
+</script>
+</body>
+</html>

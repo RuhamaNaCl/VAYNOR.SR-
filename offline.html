@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Offline | VAYNOR</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' font-style='italic' fill='%23e9bd75' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/responsive.css?v=6">
+</head>
+<body data-page="offline">
+<main style="min-height:100vh;display:grid;place-items:center;padding:24px">
+  <div class="center" data-reveal>
+    <p class="eyebrow">No connection</p>
+    <h2>You're offline.<br><em style="font-style:italic;color:var(--brass-2)">So is our imagination.</em></h2>
+    <p class="lead" style="margin:14px auto 28px">Your bag and wishlist are safe in this browser. Reconnect and everything picks up where you left it.</p>
+    <button class="btn" onclick="location.href='index.html'">Try again</button>
+  </div>
+</main>
+<script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("[data-reveal]");e&&e.classList.add("in");});</script>
+<script src="js/config.js?v=6"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/db.js?v=6"></script>
+<script src="js/ui.js?v=6"></script>
+<script src="js/redirects.js?v=6"></script>
+</body>
+</html>

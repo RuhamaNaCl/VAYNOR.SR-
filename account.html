@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Account | VAYNOR</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' font-style='italic' fill='%23e9bd75' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/responsive.css?v=6">
+</head>
+<body data-page="account" data-protected>
+<a class="skip-link" href="#main">Skip to content</a>
+<header data-chrome="header"></header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Your shelf</p>
+    <h1>Account</h1>
+  </div>
+  <div class="wrap" id="account-root" style="padding-bottom:clamp(60px,9vw,120px)">
+    <div class="dash">
+      <aside class="side">
+        <div class="who">
+          <div class="av" id="acct-initial">V</div>
+          <b id="acct-name">—</b><br>
+          <small class="muted" id="acct-email">—</small><br>
+          <small class="gold" id="acct-mode">—</small>
+        </div>
+        <a href="orders.html">Orders</a>
+        <a href="addresses.html">Addresses</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="contact.html">Support</a>
+        <a href="#" data-signout style="color:var(--bad)">Sign out</a>
+      </aside>
+      <div>
+        <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:26px">
+          <div class="stat" style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px"><div class="lbl" style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Orders</div><div class="val" id="acct-orders" style="font-family:var(--font-display);font-size:1.7rem">0</div></div>
+          <div class="stat" style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px"><div class="lbl" style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Lifetime spend</div><div class="val" id="acct-spend" style="font-family:var(--font-display);font-size:1.7rem">—</div></div>
+          <div class="stat" style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px"><div class="lbl" style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Saved pieces</div><div class="val" id="acct-wish" style="font-family:var(--font-display);font-size:1.7rem">0</div></div>
+          <div class="stat" style="background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px"><div class="lbl" style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Addresses</div><div class="val" id="acct-addr" style="font-family:var(--font-display);font-size:1.7rem">0</div></div>
+        </div>
+        <div class="cta-band"><div><h2 style="font-size:1.4rem">Your bracelet deserves company.</h2><p class="muted">The Gift Box and Care Kit round out the ritual.</p></div><a class="btn" href="shop.html">Shop accessories</a></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer data-chrome="footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js?v=6"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/db.js?v=6"></script>
+<script src="js/ui.js?v=6"></script>
+<script src="js/redirects.js?v=6"></script>
+<script src="js/cart.js?v=6"></script>
+<script src="js/wishlist.js?v=6"></script>
+<script src="js/orders.js?v=6"></script>
+</body>
+</html>

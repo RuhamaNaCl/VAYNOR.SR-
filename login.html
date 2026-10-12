@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login | VAYNOR</title>
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d0d0d'/%3E%3Ctext x='16' y='22.5' font-family='Georgia' font-size='17' font-style='italic' fill='%23e9bd75' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/responsive.css?v=6">
+</head>
+<body data-page="login">
+<a class="skip-link" href="#main">Skip to content</a>
+<header data-chrome="header"></header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="auth-card">
+      <div class="box">
+        <p class="eyebrow center">Welcome back</p>
+        <h2 style="font-family:var(--font-display);text-align:center;margin-bottom:22px">Sign in</h2>
+        <p id="auth-mode" class="notice info" style="margin-bottom:18px"></p>
+        <form id="login-form" novalidate>
+          <div class="field"><label>Email</label><input name="email" id="email" type="email" placeholder="you@example.com" autocomplete="email"><span class="err">Enter a valid email</span></div>
+          <div class="field"><label>Password</label><input name="password" id="password" type="password" placeholder="••••••••" autocomplete="current-password"><span class="err">Minimum 6 characters</span></div>
+          <button class="btn block" type="submit">Sign in</button>
+        </form>
+        <div class="orline">or</div>
+        <button class="btn ghost block" data-google type="button">Continue with Google</button>
+        <p class="muted small center" style="margin-top:20px">New here? <a href="register.html" style="color:var(--brass-2)">Create an account</a></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer data-chrome="footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js?v=6"></script>
+<script src="js/data.js?v=6"></script>
+<script src="js/db.js?v=6"></script>
+<script src="js/ui.js?v=6"></script>
+<script src="js/redirects.js?v=6"></script>
+<script src="js/cart.js?v=6"></script>
+<script src="js/auth.js?v=6"></script>
+</body>
+</html>
