@@ -1,0 +1,78 @@
+/* ============================================================
+   VAYNOR — responsive refinements
+   The layout is mobile-first-aware; these queries adapt the
+   storefront grids, chrome and tables at real device widths.
+   ============================================================ */
+
+/* tablets / small laptops */
+@media (max-width: 1080px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-top: 34px; min-height: 0; }
+  .hero-figure { max-width: 620px; }
+  .hero::before { width: 440px; height: 440px; right: -160px; top: auto; bottom: -120px; }
+  .pdp { grid-template-columns: 1fr; }
+  .buybox { position: static; }
+  .cart-layout, .checkout-grid { grid-template-columns: 1fr; }
+  .summary { position: static; }
+  .dash { grid-template-columns: 1fr; }
+  .dash .side { position: static; grid-template-columns: repeat(2, 1fr); }
+  .dash .side .who { grid-column: 1 / -1; }
+  .site-footer .cols { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .main-nav, .header-actions .account-link { display: none; }
+  .nav-toggle { display: inline-flex !important; }
+  .feature-row { grid-template-columns: 1fr; }
+  .feature-row.flip > :first-child { order: 0; }
+  .lookbook { grid-template-columns: 1fr; }
+  .lookbook img { aspect-ratio: 4/2.6; }
+  .split { grid-template-columns: 1fr; }
+  .perks { grid-template-columns: 1fr; }
+}
+
+/* phones */
+@media (max-width: 640px) {
+  :root { --header-h: 64px; }
+  body { font-size: 15px; }
+  .hero-ctas .btn { flex: 1; justify-content: center; }
+  .hero-stats { gap: 18px 26px; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .search-box { min-width: 0; }
+  .grid-3 { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .p-card .body { padding: 13px 14px 16px; }
+  .p-card .add-mini { padding: 6px 10px; font-size: 10.5px; }
+  .field-row { grid-template-columns: 1fr; }
+  .cart-line { flex-wrap: wrap; }
+  .cart-line img { width: 72px; height: 72px; }
+  .cart-line .line-price { min-width: 0; text-align: left; margin-left: 90px; padding-top: 4px; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
+  .site-footer .cols { grid-template-columns: 1fr; gap: 26px; }
+  .dash .side { grid-template-columns: 1fr; }
+  .toast-host { bottom: 14px; width: calc(100vw - 28px); }
+  .toast { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 420px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .qty-row .btn { width: 100%; }
+  .buybox .price-line .p { font-size: 1.6rem; }
+}
+
+/* keep hover-lift effects away from touch devices */
+@media (hover: none) {
+  .p-card:hover, .card:hover { transform: none; }
+}
+
+/* larger screens */
+@media (min-width: 1500px) {
+  :root { --maxw: 1360px; }
+  body { font-size: 16.5px; }
+}
+
+/* print — receipts & order details */
+@media print {
+  .site-header, .site-footer, .cart-drawer, .nav-scrim, .cart-scrim, .toast-host, .btn, .steps { display: none !important; }
+  body { background: #fff; color: #111; }
+  body::before { display: none; }
+  .order-card, .summary { border-color: #ccc; }
+}
